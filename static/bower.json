@@ -1,0 +1,17 @@
+{
+  "name": "static",
+  "description": "all static LIB for MY Bed Star website",
+  "main": "",
+  "authors": [
+    "Mahmud Yusuf"
+  ],
+  "license": "MIT",
+  "homepage": "www.atumlab.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
