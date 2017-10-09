@@ -9,12 +9,15 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ge-ss-two/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/public.min.css' %}">
   </head>
   <body>
-    
-      {% block content %}<h1>From The Main File</h1>{% endblock %}
-      {% include 'snippet/footer.html' %}
-
+    <div class="wrapper">
+        {% block content %}<h1>From The Main File</h1>{% endblock %}
+        {% include 'snippet/footer.html' %}
+    </div>
+        
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'bower_components/popper.js/dist/umd/popper.min.js' %}"></script>

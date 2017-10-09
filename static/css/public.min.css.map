@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,IAAK,CCEF,WAAW,CAAE,sBAAsB,CAElC,aAAS,CACL,UAAU,CAAE,MAAM,CAClB,UAAU,CAAE,MAAM,CCHtB,wBAAW,CACP,OAAO,CAAE,MAAW,CACpB,gBAAgB,CCFP,OAAO,CDKhB,0BAAE,CACE,MAAM,CAAE,CAAC,CACT,KAAK,CCZH,IAAO",
+"sources": ["public.scss","sass/utilities/_mixins.scss","public/_footer.scss","sass/utilities/_colors.scss"],
+"names": [],
+"file": "public.min.css"
+}

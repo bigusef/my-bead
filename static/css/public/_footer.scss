@@ -1,0 +1,17 @@
+.main-footer {
+
+    & > div:first-child {
+    }
+
+    .copy-right{
+        padding: $space-sm 0;
+        background-color: $color-bastille;
+
+
+        p {
+            margin: 0;
+            color: $color-white;
+
+        }
+    }
+}

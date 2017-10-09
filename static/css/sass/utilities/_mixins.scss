@@ -1,0 +1,31 @@
+/*
+ * base Wraped class you need to call him every main css file.
+ */
+@mixin wrapper($font-name) {
+   font-family: $font-name, sans-serif; 
+    
+    .wrapper {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+}
+
+
+@mixin media-xs {
+    @media (max-width: 575px) {@content}
+}
+
+@mixin media-sm {
+    @media (min-width: 576px) and (max-width: $screen-sm) {@content}
+}
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) and (max-width: 767px) { ... }
+//
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) and (max-width: 991px) { ... }
+//
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) and (max-width: 1199px) { ... }
+//
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
