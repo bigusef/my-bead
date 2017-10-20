@@ -1,0 +1,10 @@
+header {
+    height: 60px;
+    background-color: $color-swamp;
+    .head-contact {
+        span, a {
+            border: 1px solid $color-pacific-blue;
+            color: $color-white;
+        }
+    }
+}

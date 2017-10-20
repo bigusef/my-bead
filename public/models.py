@@ -2,14 +2,13 @@ from django.db import models
 
 
 class Mattress(models.Model):
-    name = models.CharField('اﻷسم اﻷنجليزي', max_length=50)
-    v_name = models.CharField('اﻷسم العربي', max_length=50)
+    name = models.CharField('اﻷسم العربي', max_length=50)
     description = models.TextField('الوصف')
     features = models.TextField('المميزات')
     cover = models.ImageField('صوره المرتبه', upload_to='mattress')
     is_new = models.BooleanField('إظهار في الصفحه الرئيسيه', default=False)
-    stampdate = models.DateTimeField(auto_now=True)
-    update = models.DateTimeField(auto_now_add=True)
+    stampdate = models.DateTimeField(auto_now_add=True)
+    update = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'المرتبه'
@@ -20,14 +19,13 @@ class Mattress(models.Model):
 
 
 class Products(models.Model):
-    name = models.CharField('اﻷسم اﻷنجليزي', max_length=50)
-    v_name = models.CharField('اﻷسم العربي', max_length=50)
+    name = models.CharField('اﻷسم العربي', max_length=50)
     description = models.TextField('الوصف')
     features = models.TextField('المميزات')
     cover = models.ImageField('صوره المنتج', upload_to='product')
     is_new = models.BooleanField('إظهار في الصفحه الرئيسيه', default=False)
-    stampdate = models.DateTimeField(auto_now=True)
-    update = models.DateTimeField(auto_now_add=True)
+    stampdate = models.DateTimeField(auto_now_add=True)
+    update = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'المنتج'
@@ -40,8 +38,8 @@ class Products(models.Model):
 class ContactUs(models.Model):
     name = models.CharField('أسم جهه اﻷتصال', max_length=30)
     value = models.CharField('جهه التصال', max_length=300)
-    stampdate = models.DateTimeField(auto_now=True)
-    update = models.DateTimeField(auto_now_add=True)
+    stampdate = models.DateTimeField(auto_now_add=True)
+    update = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'جهه اﻷتصال'

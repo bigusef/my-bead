@@ -1,17 +1,17 @@
 .main-footer {
-
-    & > div:first-child {
+    .footer-social{
+        padding: $space-lg 0;
+        background-color: $color-blackcurrant;
+        .socila-icons{
+            padding-top: $space-md;
+        }
     }
-
     .copy-right{
         padding: $space-sm 0;
         background-color: $color-bastille;
-
-
         p {
             margin: 0;
             color: $color-white;
-
         }
     }
 }
