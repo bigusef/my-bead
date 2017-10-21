@@ -10,7 +10,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'ge-ss-two/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mybedstar/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/public.min.css' %}">
+    {% block styles %}{% endblock %}
 </head>
 <body>
     <div class="wrapper">
@@ -25,11 +27,15 @@
     <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 
     <!-- Optional JavaScript -->
-    <script>
-        'use strict';
-        
+    <script>        
         $(function(){
+            "use strict";
+
+            $(".menu-toggle").on("click", function(){
+                $(this).children().toggleClass("active");
+            });
         });
     </script>
+    {% block javascript %}{% endblock %}
 </body>
 </html>

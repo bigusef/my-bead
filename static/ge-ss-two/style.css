@@ -29,6 +29,6 @@
 		url('GESSTwoBold-Bold.woff') format('woff'),
 		url('GESSTwoBold-Bold.ttf') format('truetype'),
 		url('GESSTwoBold-Bold.svg#GESSTwoBold-Bold') format('svg');
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
 }
