@@ -24,7 +24,7 @@ header {
         padding-bottom: $space-xs;
         background-color: $color-white;
         border-bottom-left-radius: $space-md;
-        z-index: $z-dropdown;
+        z-index: 1;
         .menu-toggle {
             border: none;
             outline: none;

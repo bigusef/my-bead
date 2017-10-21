@@ -1,9 +1,10 @@
 @import 'sass/utilities/main';
 
-body {@include wrapper('GE SS Two')}
-
+html, body {height: 100%;}
+body {@include wrapper('GE SS Two');}
 
 // All Partials files
-@import 'public/footer';
 @import 'public/header';
+@import 'public/footer';
+@import 'public/home';
 

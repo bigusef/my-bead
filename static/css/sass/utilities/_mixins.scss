@@ -22,36 +22,47 @@
     }
 }
 
-/* Transition Mixin */
+// Transition Mixin
 @mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
+    -webkit-transition: $args;
+       -moz-transition: $args;
+        -ms-transition: $args;
+         -o-transition: $args;
+            transition: $args;
 }
 
+// All media Mixin
+@mixin media-xs {@media only screen and (max-width: $screen-xs) {@content}}
+@mixin media-sm {@media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {@content}}
+@mixin media-md {@media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {@content}}
+@mixin media-lg {@media only screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {@content}}
+@mixin media-xl {@media only screen and (min-width: $screen-xl){@content}}
 
-/*
- * All media Mixin
- */
-@mixin media-xs {
-    @media (max-width: $screen-xs) {@content}
+// Gradient
+@mixin linearGradient($from, $to, $stop: 100%) {
+  background-color: $from;// fallback/image non-cover color
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);// Firefox 3.6+
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));// Safari 4+, Chrome 1+
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);// Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);// Opera 11.10+
+  background: -ms-linear-gradient(left, $from 0%, $to $stop);// IE10+
+  background: linear-gradient(to right, $from 0%, $to $stop);// Standard
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );// IE6-9
 }
 
-@mixin media-sm {
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {@content}
+// Position Mixin
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
 }
 
-@mixin media-md {
-    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {@content}
-}
-
-@mixin media-lg {
-    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {@content}
-}
-
-@mixin media-xl {
-    @media (min-width: $screen-xl){@content}
-}
+// Positioning helpers
+@mixin absolute($args: '') {@include position(absolute, $args);}
+@mixin fixed($args: '') {@include position(fixed, $args);}
+@mixin relative($args: '') {@include position(relative, $args);}
 
