@@ -61,8 +61,17 @@
   position: $position;
 }
 
-// Positioning helpers
-@mixin absolute($args: '') {@include position(absolute, $args);}
-@mixin fixed($args: '') {@include position(fixed, $args);}
-@mixin relative($args: '') {@include position(relative, $args);}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
 

@@ -27,9 +27,82 @@ main.home  {
         }
     }
     .mattress {
-        background: $color-alabaster url("../images/matrress-shape.png") top center no-repeat;
-        background-size: cover;
-        height: 30vh;
+        padding-bottom: $space-xl;
+        background: $color-alabaster url("../images/matrress-shape.png") center center repeat-y;
+        background-size: contain;
+        .mattress-label {
+            padding: $space-sm $space-base; 
+            margin-bottom: $space-lg;
+            background-color: $color-white;
+            border-radius: $space-lg;
+            position: relative;
+            top: -$space-md;
+            h2 {
+                margin-bottom: 0;
+                font-weight: $font-light;
+            }
+            @include media-xs {
+                border-radius: 0;
+            }
+            @include box-shadow(0, 9px, 15px, rgba($color-bright-gray, .4));
+        }
+        .item {
+            padding-top: $space-xl;
+            padding-bottom: $space-xl;
+            text-align: center;
+            background-color: $color-white;
+            border-radius: $space-md;
+            @include box-shadow(0, 10px, 15px, rgba($color-bright-gray, .3));
+            .item-title {
+                font-weight: $font-light;
+                font-size: $font-md;
+            }
+            .item-name {
+                padding-top: $space-sm;
+                padding-bottom: 125px;
+                font-size: 3rem;
+            }
+            .item-link{
+                padding: $space-base $space-md;
+                background-color: $color-Robins-egg-blue;
+                color: $color-white;
+                border-radius: $space-md;
+            }
+            &.new {
+                padding-top: $space-base;
+                background: url("../images/box-new.png") top left repeat-x;
+                color: $color-white;
+                position: relative;
+                top: -$space-md;
+                .item-new {
+                    display: block;
+                    width: $space-xl;
+                    padding-top: $space-base;
+                    padding-bottom: $space-base;
+                    margin: 0 $space-base $space-lg auto;
+                    border-radius: 50%;
+                    background-color: $color-white;
+                    color: $color-big-stone;
+                }
+                .item-link {
+                    background-color: $color-white;
+                    color: $color-big-stone;
+                }
+            }
+        }
+        .read-more {
+            position: relative;
+            .link {
+                position: absolute;
+                top: 37%;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-size: $font-md;
+                font-weight: $font-medium;
+                color:$color-bright-turquoise; 
+            }
+        }
     }
 }
 
