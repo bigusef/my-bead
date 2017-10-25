@@ -4,7 +4,8 @@
 {% block title %}{{block.super}} | Home{% endblock %}
 
 {% block content %}
-<main class="home">
+<main class="home"> 
+    <!-- the entro section -->
     <section class="intro">
         <div></div>
         <div></div>
@@ -47,6 +48,52 @@
                 <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
                     <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
                     <a class="link" href="#">مشاهده جميع المراتب</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="more-product">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h2 class="section-title">المذيد من المنتجات</h2>
+                <div class="col-12">
+                    <div class="slider">
+                        <div id="moreProductSlid" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-4"></div>
+                                        <div class="col-6 text-right">
+                                            <h4>ميلتون - واقي المرتبة</h4>
+                                            <p>بدأت ماي بد ستار للانتاج بحلم متطلعبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلععععع</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#moreProductSlid" role="button" data-slide="prev">
+                                <span class="flaticon-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#moreProductSlid" role="button" data-slide="next">
+                                <span class="flaticon-right" aria-hidden="true"></span>
+                            </a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="custom-mattress">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8"></div>
+                <div class="col-8">
+                    <p></p>
+                </div>
+                <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
+                    <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
+                    <a class="link" href="#">كلمنا وصمم مرتبتك</a>
                 </div>
             </div>
         </div>

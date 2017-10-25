@@ -2,9 +2,45 @@
 
 html, body {height: 100%;}
 body {@include wrapper('GE SS Two');}
+.read-more {
+    @include position(relative);
+    .link {
+        @include position(absolute, top 37% left 0 right 0);
+        text-align: center;
+        font-size: $font-md;
+        font-weight: $font-medium;
+        color:$color-bright-turquoise; 
+    }
+}
+.section-title {
+    padding-left: $space-md;
+    padding-right: $space-lg;
+    color: $color-black;
+    font-weight: $font-bold;
+    @include position(relative);
+    &:before {
+        content: '';
+        display: block;
+        width: $space-base;
+        height: $space-base;
+        background-color: $color-pacific-blue;
+        border-radius: 50%;
+        @include position(absolute, top $space-xs left 0);
+    }
+    &:after {
+        content: '';
+        display: block;
+        width: $space-md;
+        height: $space-xs;
+        background-color: $color-pacific-blue;
+        border-radius: $space-sm; 
+        @include position(absolute, top 50% right 0);
+    }
+}
 
 // All Partials files
 @import 'public/header';
 @import 'public/footer';
 @import 'public/home';
+@import 'public/contact-us';
 

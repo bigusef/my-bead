@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ block.super }}|Contact Us{% endblock %}
+
+{% block content %}
+<main class="contact-us">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="section-title">تواصل معنا</h2>
+            <span class="col-12"></span>
+            <div class="col-md-9 col-sm-10 col-12">
+                <ul class="contact-item list-unstyled">
+                    <li> 
+                        <span class="title">shjdjf nmckks</span>
+                        <span class="data">10883ji994</span>
+                        <span class="flaticon-phone"></span>
+                    </li>
+                    <li>
+                        <span class="data">dhudjjsomsmmlpdijks</span>
+                        <span class="title">jdjjskooodkkdp</span>
+                        <span class="flaticon-email"></span>
+                    </li>
+                    <li>
+                        <span class="data">neeeskkdkk</span>
+                        <span class="title">mahmoud yusuf</span>
+                        <span class="flaticon-marker"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
+                <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
+                <a class="link" href="#">فروعنا</a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -51,7 +51,7 @@
 }
 
 // Position Mixin
-@mixin position($position, $args) {
+@mixin position($position, $args:null) {
   @each $o in top right bottom left {
     $i: index($args, $o);
     @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
@@ -61,7 +61,7 @@
   position: $position;
 }
 
-
+// Box Shadow
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
     -webkit-box-shadow:inset $top $left $blur $color;
