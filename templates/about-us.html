@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title%}{{ block.super }}|About Us{% endblock %}
+
+{% block content %}
+<main class="about-us">
+    <span></span>
+    <span></span>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-10">
+                <div class="abut-content text-center">
+                    <h1 class="section-title mb-5 d-inline-block">عن الشركة</h1>
+                    <p>{{word}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

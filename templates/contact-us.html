@@ -10,27 +10,39 @@
             <h2 class="section-title">تواصل معنا</h2>
             <span class="col-12"></span>
             <div class="col-md-9 col-sm-10 col-12">
+                {% if phone %}
                 <ul class="contact-item list-unstyled">
-                    <li> 
-                        <span class="title">shjdjf nmckks</span>
-                        <span class="data">10883ji994</span>
+                    {% for i in phone %}
+                    <li class="row align-items-center"> 
                         <span class="flaticon-phone"></span>
+                        <span class="title">{{i.title}}</span>
+                        <span class="data">{{i.number}}</span>
                     </li>
-                    <li>
-                        <span class="data">dhudjjsomsmmlpdijks</span>
-                        <span class="title">jdjjskooodkkdp</span>
-                        <span class="flaticon-email"></span>
-                    </li>
-                    <li>
-                        <span class="data">neeeskkdkk</span>
-                        <span class="title">mahmoud yusuf</span>
-                        <span class="flaticon-marker"></span>
-                    </li>
+                    {% endfor %}
                 </ul>
-            </div>
-            <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
-                <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
-                <a class="link" href="#">فروعنا</a>
+                {% endif %}
+                {% if email %}
+                <ul class="contact-item list-unstyled">
+                    {% for i in email %}
+                    <li class="row align-items-center">
+                        <span class="flaticon-email"></span>
+                        <span class="data">{{i.title}}</span>
+                        <span class="title">{{i.email}}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if adress %}
+                <ul class="contact-item list-unstyled">
+                    {% for i in adress %}
+                    <li class="row align-items-center">
+                        <span class="flaticon-marker"></span>
+                        <span class="data">{{i.title}}</span>
+                        <span class="title">{{i.adress}}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </div>
         </div>
     </div>

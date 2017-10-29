@@ -13,15 +13,23 @@
                     <img class="close" src="{% static 'images/svg/close.svg' %}" alt="Close Menu" >
                     <img class="open active" src="{% static 'images/svg/menu.svg' %}" alt="Open Menu">
                 </button>
-                <a href="{% url 'Public:home' %}"><img class="img-fluid pl-3 pl-sm-0" src="{% static 'images/logo-ar.png' %}" alt="My Bed Star"></a>
+                <a href="{% url 'Public:home' %}">
+                    <img class="img-fluid pl-3 pl-sm-0" src="{% static 'images/logo-ar.png' %}" alt="My Bed Star">
+                </a>
             </div>
             <div class="collapse" id="collapseMenu">
                 <ul class="list-unstyled menu-links">
+                    {% with url_name=request.resolver_match.url_name %}
                     <li><a href="#">المراتب</a></li>
                     <li><a href="#">المزيد من منتجاتنا</a></li>
                     <li><a href="#">مستلزمات التصنيع</a></li>
-                    <li><a href="#">عن الشركه</a></li>
-                    <li><a href="{% url 'Public:contact' %}">تواصل معنا</a></li>
+                    <li {% if url_name == 'about' %}class="active"{% endif %}>
+                        <a href="{% url 'Public:about' %}">عن الشركه</a>
+                    </li>
+                    <li {% if url_name == 'contact' %}class="active"{% endif %}>
+                        <a href="{% url 'Public:contact' %}">تواصل معنا</a>
+                    </li>
+                    {% endwith %}
                 </ul>
             </div>
         </div>

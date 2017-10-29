@@ -14,27 +14,17 @@ main.contact-us {
             padding-bottom: $space-base;
             span {
                 color: $color-big-stone;
-                &:first-child {
-                    font-weight: $font-light;
-                }
                 &:nth-child(2) {
-                    font-weight: $font-bold;
-                    font-size: $font-regular;
-                    margin-left: $font-medium;
-                    &:before {
+                    font-weight: $font-medium;
+                    font-size: $font-base;
+                    margin-left: $space-sm;
+                    &:after {
                         content: ':';
                         padding-right: $space-xs;
                     }
                 }
                 &:last-child {
-                    padding: $space-xs;
-                    margin-left: $space-base;
-                    border: 1px solid $color-bright-turquoise; 
-                    border-radius: 50%;
-                    &:before {
-                        margin-left: 0;
-                        vertical-align: middle;
-                    }
+                    font-weight: $font-light;
                 }
             }
         }
