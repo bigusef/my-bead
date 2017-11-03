@@ -1,11 +1,21 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 
-from django.shortcuts import render, get_object_or_404
-from .models import CompanyInfo
+from django.shortcuts import get_object_or_404
+from .models import CompanyInfo, Mattress, Products
 
 
-def index(request):
-    return render(request, 'home.html', {})
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
+
+class MattressView(DetailView):
+    template_name = 'detail-item.html'
+    model = Mattress
+
+
+class ProductView(DetailView):
+    template_name = 'detail-item.html'
+    model = Products
 
 
 class ContactUsView(TemplateView):
@@ -16,7 +26,7 @@ class ContactUsView(TemplateView):
         info = get_object_or_404(CompanyInfo, pk=1)
         context['phone'] = info.telephones.all()
         context['email'] = info.emails.all()
-        context['adress'] = info.adresses.all()
+        context['address'] = info.addresses.all()
         return context
 
 

@@ -7,14 +7,15 @@
 <main class="home"> 
     <!-- the entro section -->
     <section class="intro">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div data-aos="slide-up" data-aos-duration="700"></div>
+        <div data-aos="slide-up" data-aos-duration="1100"></div>
+        <div data-aos="slide-up" data-aos-duration="1600"></div>
+        <div data-aos="slide-up" data-aos-duration="1900"></div>
     </section>
 
     <!-- the mattress section -->
     <section class="mattress">
+        <div class="bg" data-aos="fade-up" data-aos-duration="3000"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="mattress-label col-sm-auto col-12 row align-items-center">
@@ -85,15 +86,18 @@
     </section>
 
     <section class="custom-mattress">
+        <div class="bg" data-aos="fade-up" data-aos-duration="3000"></div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-8"></div>
-                <div class="col-8">
-                    <p></p>
+                <div class="col-8 custom-img">
+                    <img class="img-fluid" src="{% static 'images/custome.png' %}" alt="اصنع مرتبتك علي مزاجك">
+                </div>
+                <div class="col-8 custom-text">
+                    <p>مع <span>ماي بد ستار</span> ممكن تعمل <span>مرتبة علي مزاجك</span> بمقاسات وارتفاعات انت تحددها بنفسك</p>
                 </div>
                 <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
                     <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
-                    <a class="link" href="#">كلمنا وصمم مرتبتك</a>
+                    <a class="link" href="{% url 'Public:contact' %}">كلمنا وصمم مرتبتك</a>
                 </div>
             </div>
         </div>

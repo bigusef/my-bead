@@ -5,47 +5,44 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <title>{% block title %}My Bed Star{% endblock %}</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'ge-ss-two/style.css' %}">
     <link rel="stylesheet" href="{% static 'mybedstar/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bower_components/aos/dist/aos.css' %}">
     <link rel="stylesheet" href="{% static 'css/public.min.css' %}">
     {% block styles %}{% endblock %}
 </head>
 <body>
-    <div class="wrapper">
-        {% include 'snippet/header.html' %}
-        {% block content %}<h1>From The Base Layout File</h1>{% endblock %}
-        {% include 'snippet/footer.html' %}
-    </div>
+<div class="wrapper">
+    {% include 'snippet/header.html' %}
+    {% block content %}<h1>From The Base Layout File</h1>{% endblock %}
+    {% include 'snippet/footer.html' %}
+</div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'bower_components/popper.js/dist/umd/popper.min.js' %}"></script>
-    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'bower_components/popper.js/dist/umd/popper.min.js' %}"></script>
+<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'bower_components/aos/dist/aos.js' %}"></script>
 
-    <!-- Optional JavaScript -->
-    <script>
-        
-        $(function(){
-            "use strict";
+<!-- Optional JavaScript -->
+<script>
 
-            // Maliha Custom Scrollbar
-            $("body").mCustomScrollbar({
-                axis: 'y',
-                theme:"minimal-dark"
-            });
+    $(function () {
+        "use strict";
 
-            // Toggle the menu button icon 
-            $(".menu-toggle").on("click", function(){
-                $(this).children().toggleClass("active");
-            });
+        AOS.init();
+
+        // Toggle the menu button icon
+        $(".menu-toggle").on("click", function () {
+            $(this).children().toggleClass("active");
         });
-    </script>
-    {% block javascript %}{% endblock %}
+    });
+</script>
+{% block javascript %}{% endblock %}
 </body>
 </html>

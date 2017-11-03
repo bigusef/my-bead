@@ -25,7 +25,7 @@ SECRET_KEY = 'w-@^ngh7q5de#++rhtdp=b+3-prwg^bb)+ktz%(o+zf68b5a9g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.2']
 
 
 # Application definition
@@ -80,13 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mybed',
-        'USER': 'mybedstar',
-        'PASSWORD': '123',
+        'USER': 'mybed_user',
+        'PASSWORD': '12345tgb',
         'HOST': 'localhost',
         'PORT': '',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
     }
 }
 

@@ -1,0 +1,76 @@
+@import "../sass/utilities/main";
+
+.product-item {
+    background-color: $color-alabaster;
+
+    .mattress-content {
+        padding-top: $space-lg;
+        padding-bottom: $space-lg;
+
+        p {
+            color: $color-boulder;
+            font-weight: $font-medium;
+            font-size: $font-md;
+        }
+
+        ul {
+            padding-right: $space-md;
+            padding-top: $space-md;
+
+            li {
+                color: $color-boulder;
+                padding-top: $space-sm;
+                padding-right: $space-md;
+                padding-bottom: $space-sm;
+                font-size: $font-base;
+                font-weight: $font-medium;
+                @include position(relative);
+
+                &:after {
+                    content: '-';
+                    @include position(absolute, right $space-xs);
+                }
+            }
+        }
+    }
+
+    .menu-list {
+        background-color: $color-gallery;
+        @include position(realtive);
+
+        &:before {
+            content: '';
+            width: 500%;
+            background-color: $color-gallery;
+            @include position(absolute, top 0 bottom 0 left 0);
+        }
+
+        .link-list {
+            padding-top: $space-lg;
+            margin: 0;
+            @include position(absolute, top 0 right 0 bottom 0 left 0);
+
+            .link-item {
+                display: inline-block;
+                width: 35%;
+                padding-top: $space-sm;
+                padding-bottom: $space-sm;
+                padding-right: $space-base;
+                color: $color-white;
+                border-top-right-radius: $space-md;
+                border-bottom-right-radius: $space-md;
+                text-align: right;
+                @include transition(all .3s ease-in-out);
+
+                &:hover, &.active {
+                    width: 50%;
+                    border-top-left-radius: $space-md;
+                    border-bottom-left-radius: $space-md;
+                    transform: translateX(-50%);
+                    text-align: center;
+                    font-weight: $font-bold;
+                }
+            }
+        }
+    }
+}

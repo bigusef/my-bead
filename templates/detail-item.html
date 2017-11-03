@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ block.super }}|{% endblock %}
+
+{% block content %}
+    <main class="product-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-11 mattress-content">
+                            <img src="{% static 'images/' %}">
+                            <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ipsam
+                                iste nemo sint? Autem,
+                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
+                                reprehenderit sunt temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Amet ipsam iste nemo sint? Autem,
+                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
+                                reprehenderit sunt temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Amet ipsam iste nemo sint? Autem,
+                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
+                                reprehenderit sunt temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Amet ipsam iste nemo sint? Autem,
+                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
+                                reprehenderit sunt temporibus.</p>
+                            <ul class="list-unstyled text-right">
+                                <li>Mahmoud Yusuf</li>
+                                <li>Mahmoud Yusuf Effindi</li>
+                                <li>Mahmoud Yusuf Effindi</li>
+                                <li>Mahmoud Yusuf Effindi</li>
+                                <li>Mahmoud Yusuf Effindi</li>
+                                <li>Mahmoud Yusuf Effindi</li>
+                                <li>Mahmoud Yusuf Effindi</li>
+                                <li>Mahmoud Yusuf Effindi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 menu-list">
+                    <ul class="link-list list-unstyled">
+                        <li class="mb-3">
+                            <a class="link-item" href="#">بابلي</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
