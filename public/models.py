@@ -5,8 +5,8 @@ from django.core.validators import RegexValidator
 class Telephones(models.Model):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="لابد ان يكون رقم هاتف حقيقي")
 
-    title = models.CharField('أسم رقم الهاتف', max_length=25)
-    number = models.CharField('رقم الهاتف', validators=[phone_regex], max_length=15, unique=True)
+    title = models.CharField(max_length=25, unique=True, verbose_name='أسم رقم الهاتف')
+    number = models.CharField(max_length=15, verbose_name='رقم الهاتف', validators=[phone_regex])
 
     class Meta:
         verbose_name = 'الهاتف'
@@ -17,8 +17,8 @@ class Telephones(models.Model):
 
 
 class Emails(models.Model):
-    title = models.CharField('اﻷسم', max_length=25)
-    email = models.EmailField('البريد اﻷلكتروني')
+    title = models.CharField(max_length=25, verbose_name='اﻷسم')
+    email = models.EmailField(unique=True, verbose_name='البريد اﻷلكتروني')
 
     class Meta:
         verbose_name = 'البريد اﻷلكتروني'
@@ -29,8 +29,8 @@ class Emails(models.Model):
 
 
 class Addresses(models.Model):
-    title = models.CharField('اﻷسم', max_length=25)
-    address = models.TextField('العنوان')
+    title = models.CharField(max_length=25, unique=True, verbose_name='اﻷسم')
+    address = models.TextField(verbose_name='العنوان')
 
     class Meta:
         verbose_name = 'العنوان'
@@ -41,7 +41,9 @@ class Addresses(models.Model):
 
 
 class CompanyInfo(models.Model):
-    about_word = models.TextField('كلمه عن الشركه')
+    about_word = models.TextField(verbose_name='كلمه عن الشركه')
+    facebook = models.CharField(max_length=300, verbose_name='رابط صفحه الفيس بوك')
+    instagram = models.CharField(max_length=300, verbose_name='رابط صفحه الإنستجرام')
     telephones = models.ManyToManyField(Telephones, verbose_name='الهواتف')
     emails = models.ManyToManyField(Emails, verbose_name='البريد اﻷلكتروني')
     addresses = models.ManyToManyField(Addresses, verbose_name='العناوين')
@@ -55,12 +57,12 @@ class CompanyInfo(models.Model):
 
 
 class Mattress(models.Model):
-    name = models.CharField('أسم المرتبه', max_length=50)
-    description = models.TextField('الوصف المرتبه')
-    features = models.TextField('المميزات')
-    cover = models.ImageField('صوره المرتبه', upload_to='mattress')
+    name = models.CharField(max_length=50, verbose_name='أسم المرتبه')
+    description = models.TextField(verbose_name='وصف المرتبه')
+    features = models.TextField(verbose_name='المميزات', help_text="يجب إدخال كل ميزه مفصول بينها بعلامه ','")
+    cover = models.ImageField(upload_to='mattress', verbose_name='صوره المرتبه')
     color = models.CharField(max_length=7, verbose_name='لون القائمه')
-    is_new = models.BooleanField('إظهار في الصفحه الرئيسيه', default=False)
+    is_new = models.BooleanField(verbose_name='إظهار في الصفحه الرئيسيه', default=False)
     stamp = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
 
@@ -71,14 +73,21 @@ class Mattress(models.Model):
     def __str__(self):
         return self.name
 
+    def get_features_list(self):
+        self.result = self.features.split(',')
+        for i in self.result:
+            if len(i) <= 2:
+                self.result.remove(i)
+        return self.result
+
 
 class Products(models.Model):
-    name = models.CharField('أسم المنتج', max_length=50)
-    description = models.TextField('مواصفات المنتج')
-    features = models.TextField('المميزات')
-    cover = models.ImageField('صوره المنتج', upload_to='product')
+    name = models.CharField(max_length=50, verbose_name='أسم المنتج')
+    description = models.TextField(verbose_name='مواصفات المنتج')
+    features = models.TextField(verbose_name='المميزات', help_text="يجب إدخال كل ميزه مفصول بينها بعلامه ','")
+    cover = models.ImageField(upload_to='product', verbose_name='صوره المنتج')
     color = models.CharField(max_length=7, verbose_name='لون القائمه')
-    is_new = models.BooleanField('إظهار في الصفحه الرئيسيه', default=False)
+    is_new = models.BooleanField(verbose_name='إظهار في الصفحه الرئيسيه', default=False)
     stamp = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
 
@@ -88,3 +97,10 @@ class Products(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_features_list(self):
+        self.result = self.features.split(',')
+        for i in self.result:
+            if len(i) <= 2:
+                self.result.remove(i)
+        return self.result

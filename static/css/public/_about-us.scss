@@ -1,17 +1,21 @@
 main.about-us {
     padding-top: $space-xl;
     padding-bottom: $space-lg;
+    overflow: hidden;
     @include position(relative);
-    @include linearGradient($color-pacific-blue, $color-robins-egg-blue);
+    @include linearGradient(#00ebe9, #00cbc9);
+
     & > span {
         display: block;
         @include position(absolute, top 0 right 0 bottom 0 left 0);
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+
         &:first-child {
             background-image: url("../images/head-shape-1.png");
         }
+
         &:nth-child(2) {
             background-image: url("../images/head-shape-2.png");
         }
@@ -20,5 +24,11 @@ main.about-us {
         padding: $space-lg $space-base 100px;
         background-color: $color-white;
         border-radius: $space-md;
+
+        h1 {
+            @include media-xs {
+                font-size: 30px;
+            }
+        }
     }
 }

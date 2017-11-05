@@ -5,17 +5,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img class="img-fluid d-block m-auto" src="{% static 'images/svg/logo-footer.svg' %}" alt="My Bed Star">
+                    <img class="img-fluid d-block m-auto" src="{% static 'images/svg/logo-footer.svg' %}"
+                         alt="My Bed Star">
                 </div>
                 <div class="col-12 socila-icons">
                     <div class="row justify-content-center text-center">
-                        <a class="col-sm-auto col-6 ml-sm-1 mr-sm-1 order-sm-1 order-3" href="#">
-                            <img src="{% static 'images/svg/instagram.svg' %}" alt="Instagram Page">
+                        <a class="col-sm-auto col-6 ml-sm-1" href="{{ instagram_link }}">
+                            <img src="{% static 'images/instagram.png' %}" alt="Instagram Page">
                         </a>
-                        <a class="col-sm-auto col-6 ml-sm-1 mr-sm-1 order-2" href="#">
-                            <img src="{% static 'images/svg/facebook.svg' %}" alt="Facebook Page">
+                        <a class="col-sm-auto col-6 ml-sm-1" href="{{ facebook_link }}">
+                            <img src="{% static 'images/facebook.png' %}" alt="Facebook Page">
                         </a>
-                        <img class="col-sm-auto order-1 order-sm-3 ml-sm-1 mr-sm-1 mb-sm-0 mb-3" src="{% static 'images/svg/follow.svg' %}" alt="Follwo Us On">
+                        <img class="col-sm-auto hidden d-none d-sm-block"
+                             src="{% static 'images/svg/follow.svg' %}" alt="Follwo Us On">
                     </div>
                 </div>
             </div>
@@ -23,11 +25,15 @@
     </div>
     <div class="copy-right">
         <div class="container">
-            <div class="row align-items-center">
-                <a class="col-sm-auto col-12 text-center mb-3 mb-sm-0" href="{% url 'ATUMlab' %}" target="_blank" title='ATUMlab Softwer House'>
-                    <img src="{% static 'images/svg/atumlab.svg' %}" alt="ATUMlab">
-                </a>
-                <p class="col-sm-auto col-12 ml-sm-auto text-center">جميع الحقوق محفوظه لموقع ماي بد استار</p>
+            <div class="row align-items-end">
+                <div class="col-sm-auto col-12 text-center mb-3 mb-sm-0">
+                    <a href="{% url 'ATUMlab' %}" target="_blank" title='ATUMlab Softwer House'>
+                        <img src="{% static 'images/svg/atumlab.svg' %}" alt="ATUMlab">
+                    </a>
+                </div>
+                <div class="col-sm-auto col-12 ml-sm-auto text-center">
+                    <p>جميع الحقوق محفوظه لموقع ماي بد استار</p>
+                </div>
             </div>
         </div>
     </div>

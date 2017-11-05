@@ -7,15 +7,38 @@ from .models import CompanyInfo, Mattress, Products
 class HomeView(TemplateView):
     template_name = 'home.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+
+        try:
+            context['bubbly'] = Mattress.objects.get(name='بابلي')
+        except Mattress.DoesNotExist:
+            pass
+
+        context['mattress_list'] = Mattress.objects.filter(is_new__exact=True)[:2]
+        context['product_list'] = Products.objects.filter(is_new__exact=True)
+        return context
+
 
 class MattressView(DetailView):
     template_name = 'detail-item.html'
     model = Mattress
 
+    def get_context_data(self, **kwargs):
+
+        context = super(MattressView, self).get_context_data(**kwargs)
+        context['object_list'] = Mattress.objects.all()
+        return context
+
 
 class ProductView(DetailView):
     template_name = 'detail-item.html'
     model = Products
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductView, self).get_context_data(**kwargs)
+        context['object_list'] = Products.objects.all()
+        return context
 
 
 class ContactUsView(TemplateView):
@@ -35,7 +58,9 @@ class AboutUsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutUsView, self).get_context_data(**kwargs)
-        info = get_object_or_404(CompanyInfo, pk=1)
-        context['word'] = info.about_word
+
+        info = CompanyInfo.objects.first()
+        if info:
+            context['word'] = info.about_word
         return context
 

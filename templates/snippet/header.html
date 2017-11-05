@@ -2,16 +2,22 @@
 
 <header class="container-fluid">
     <div class="row align-items-center h-100">
-        <img class="col-md-auto col-sm-5 d-none d-sm-block mr-auto" src="{% static 'images/svg/logo-en.svg' %}"
-             alt="My Bed Star">
+
+        <!-- English logo -->
+        <img class="col-md-auto col-sm-5 d-none d-sm-block mr-auto" src="{% static 'images/svg/logo-en.svg' %}" alt="My Bed Star">
+
+        <!-- seals phone -->
         <div class="col-auto d-none d-lg-block head-contact">
             <span class="d-none d-xl-inline mr-2">تواصل معنا</span>
-            <a class="mr-2 flaticon-phone" href="tel:012122">012312323</a>
+            <a class="mr-2 flaticon-phone" href="tel:{{ header_phone }}">{{ header_phone }}</a>
         </div>
+
+        <!-- Main menu -->
         <div class="col-md-auto col-sm-7 col-12 main-menu align-self-start">
+
+            <!-- menu control -->
             <div class="d-flex align-items-center">
-                <button class="menu-toggle ml-sm-3 ml-0 mr-md-5 mr-auto" type="button" data-toggle="collapse"
-                        data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
+                <button class="menu-toggle ml-0 ml-sm-3 mr-md-5 mr-auto mr-sm-5" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
                     <img class="close" src="{% static 'images/svg/close.svg' %}" alt="Close Menu">
                     <img class="open active" src="{% static 'images/svg/menu.svg' %}" alt="Open Menu">
                 </button>
@@ -19,14 +25,16 @@
                     <img class="img-fluid pl-3 pl-sm-0" src="{% static 'images/logo-ar.png' %}" alt="My Bed Star">
                 </a>
             </div>
+
+            <!-- menu Items -->
             <div class="collapse" id="collapseMenu">
                 <ul class="list-unstyled menu-links">
                     {% with url_name=request.resolver_match.url_name %}
                         <li {% if url_name == 'mattress' %}class="active"{% endif %}>
-                            <a href="{% url 'Public:mattress' pk=1 %}">المراتب</a>
+                            <a href="{% url 'Public:mattress' pk=first_mattress_pk %}">المراتب</a>
                         </li>
                         <li {% if url_name == 'product' %}class="active"{% endif %}>
-                            <a href="{% url 'Public:product' pk=1 %}">المزيد من منتجاتنا</a>
+                            <a href="{% url 'Public:product' pk=first_product_pk %}">المزيد من منتجاتنا</a>
                         </li>
                         <li>
                             <a href="#">مستلزمات التصنيع</a>

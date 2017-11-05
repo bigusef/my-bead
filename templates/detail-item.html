@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{ block.super }}|{% endblock %}
+{% block title %}{{ block.super }} | {{ object.name }}{% endblock %}
 
 {% block content %}
     <main class="product-item">
@@ -9,39 +9,38 @@
             <div class="row">
                 <div class="col-10">
                     <div class="row">
-                        <div class="col-11 mattress-content">
-                            <img src="{% static 'images/' %}">
-                            <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ipsam
-                                iste nemo sint? Autem,
-                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
-                                reprehenderit sunt temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Amet ipsam iste nemo sint? Autem,
-                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
-                                reprehenderit sunt temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Amet ipsam iste nemo sint? Autem,
-                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
-                                reprehenderit sunt temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Amet ipsam iste nemo sint? Autem,
-                                debitis dolor, dolore, dolorum eaque fugit iure iusto magni modi officiis quidem quod
-                                reprehenderit sunt temporibus.</p>
-                            <ul class="list-unstyled text-right">
-                                <li>Mahmoud Yusuf</li>
-                                <li>Mahmoud Yusuf Effindi</li>
-                                <li>Mahmoud Yusuf Effindi</li>
-                                <li>Mahmoud Yusuf Effindi</li>
-                                <li>Mahmoud Yusuf Effindi</li>
-                                <li>Mahmoud Yusuf Effindi</li>
-                                <li>Mahmoud Yusuf Effindi</li>
-                                <li>Mahmoud Yusuf Effindi</li>
+                        <div class="col-11 row justify-content-center mattress-content">
+                            <div class="col-12 col-md-10 col-lg-8">
+                                <img class="img-fluid mb-5" src="{% get_media_prefix %}{{ object.cover }}"
+                                     alt="{{ object.name }}">
+                            </div>
+                            <p class="text-right col-12">{{ object.description }}</p>
+                            <ul class="list-unstyled text-right col-12">
+                                {% for list in object.get_features_list %}
+                                    <li>{{ list }}</li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-2 menu-list">
                     <ul class="link-list list-unstyled">
-                        <li class="mb-3">
-                            <a class="link-item" href="#">بابلي</a>
-                        </li>
+                        {% for item in object_list %}
+                            <li class="mb-3">
+                                <a {% if item.pk == object.pk %}
+                                    class="link-item active"
+                                {% else %}
+                                    class="link-item"
+                                {% endif %}
+                                {% if request.resolver_match.url_name == 'mattress' %}
+                                    href="{% url 'Public:mattress' pk=item.pk %}"
+                                {% else %}
+                                    href="{% url 'Public:product' pk=item.pk %}"
+                                {% endif %}
+                                    style="background-color: {{ item.color }}">{{ item.name }}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

@@ -26,7 +26,7 @@
                 font-weight: $font-medium;
                 @include position(relative);
 
-                &:after {
+                &:before {
                     content: '-';
                     @include position(absolute, right $space-xs);
                 }
@@ -52,23 +52,20 @@
 
             .link-item {
                 display: inline-block;
-                width: 35%;
-                padding-top: $space-sm;
-                padding-bottom: $space-sm;
-                padding-right: $space-base;
+                padding: $space-sm $space-base $space-sm $space-sm;
                 color: $color-white;
                 border-top-right-radius: $space-md;
                 border-bottom-right-radius: $space-md;
                 text-align: right;
+                white-space: nowrap;
                 @include transition(all .3s ease-in-out);
 
                 &:hover, &.active {
-                    width: 50%;
+                    padding-right: $space-lg;
+                    padding-left: $space-lg;
                     border-top-left-radius: $space-md;
                     border-bottom-left-radius: $space-md;
-                    transform: translateX(-50%);
-                    text-align: center;
-                    font-weight: $font-bold;
+                    transform: translateX(-30%);
                 }
             }
         }

@@ -2,7 +2,7 @@ main.home {
     .intro {
         height: calc(100vh - 60px);
         @include position(relative);
-        @include linearGradient($color-pacific-blue, $color-robins-egg-blue);
+        @include linearGradient(#00ebe9, #00cbc9);
         div {
             @include position(absolute, top 0 right 0 bottom 0 left 0);
             background-position: center center;
@@ -39,16 +39,21 @@ main.home {
             margin-bottom: $space-lg;
             background-color: $color-white;
             border-radius: $space-lg;
-            @include position(relative);
-            top: -$space-md;
+            @include box-shadow(0, $space-xs, $space-sm, rgba($color-bright-gray, .1));
+            @include position(relative, top -30px);
+
             h2 {
                 margin-bottom: 0;
                 font-weight: $font-light;
+
+                @include media-down(430px) {
+                    font-size: 25px;
+                }
             }
+
             @include media-xs {
                 border-radius: 0;
             }
-            @include box-shadow(0, 9px, 15px, rgba($color-bright-gray, .4));
         }
 
         .item {
@@ -57,28 +62,32 @@ main.home {
             text-align: center;
             background-color: $color-white;
             border-radius: $space-md;
-            @include box-shadow(0, 10px, 15px, rgba($color-bright-gray, .3));
+            @include box-shadow(0, $space-xs, $space-sm, rgba($color-bright-gray, .1));
+
             .item-title {
                 font-weight: $font-light;
                 font-size: $font-md;
             }
+
             .item-name {
                 padding-top: $space-sm;
                 padding-bottom: 125px;
                 font-size: 3rem;
             }
+
             .item-link {
                 padding: $space-base $space-md;
                 background-color: $color-robins-egg-blue;
                 color: $color-white;
                 border-radius: $space-md;
             }
+
             &.new {
                 padding-top: $space-base;
                 background: url("../images/box-new.png") top left repeat-x;
                 color: $color-white;
-                @include position(relative);
-                top: -$space-md;
+                @include position(relative, top -30px);
+
                 .item-new {
                     display: block;
                     width: $space-xl;
@@ -89,6 +98,7 @@ main.home {
                     background-color: $color-white;
                     color: $color-big-stone;
                 }
+
                 .item-link {
                     background-color: $color-white;
                     color: $color-big-stone;
@@ -98,28 +108,51 @@ main.home {
     }
 
     .more-product {
-        padding-top: $space-xl;
+        padding-top: $space-lg;
         padding-bottom: $space-base;
         background-color: $color-gallery;
+
+        h2 {
+            @include media-down($screen-sm-max) {
+                margin-bottom: $space-md;
+            }
+
+            @include media-xs {
+                font-size: $font-lg;
+            }
+        }
+
         .slider {
             padding-top: $space-md;
             padding-bottom: $space-md;
             background-color: $color-white;
             border-radius: $space-md;
             z-index: 10;
-            @include box-shadow(0, $space-sm, $space-md, rgba($color-bright-gray, .4));
+            @include box-shadow(0, 5px, 10px, rgba($color-bright-gray, .1));
             @include position(relative, bottom -30%);
+
             .carousel-item {
                 h4 {
                     margin-bottom: $space-md;
                     font-weight: $font-bold;
                     font-size: $font-lg;
+
+                    @include media-down($screen-sm-max) {
+                        text-align: center;
+                        margin-bottom: 0;
+                        padding-top: $space-base;
+                    }
+
+                    @include media-xs {
+                        font-size: $font-md;
+                    }
                 }
                 p {
                     font-weight: $font-light;
                     font-size: $font-paragraph;
                 }
             }
+
             .carousel-control-next, .carousel-control-prev {
                 width: $space-md;
                 color: $color-black;
@@ -127,21 +160,29 @@ main.home {
                     margin: 0;
                 }
             }
+
+            @include media-down($screen-sm-max) {
+                position: static;
+            }
+        }
+
+        @include media-down($screen-sm-max) {
+            padding-bottom: $space-lg;
         }
     }
 
     .custom-mattress {
         padding-top: 150px;
         padding-bottom: $space-lg;
-
         background-color: $color-alabaster;
-        @include position(relative);
         overflow: hidden;
+        @include position(relative);
 
         .bg {
             background: url("../images/custome-shape.png") center center repeat-y;
             background-size: contain;
             @include position(absolute, top 0 right 0 bottom 0 left 0);
+            @include box-shadow(0, $space-xs, $space-sm, rgba($color-bright-gray, .1));
         }
 
         .custom-img {
@@ -156,12 +197,25 @@ main.home {
             border-radius: $space-md;
             z-index: 1;
             @include position(relative, top -45px right 60px);
-            @include box-shadow(0, $space-sm, $space-md, rgba($color-bright-gray, .4));
+            @include box-shadow(0, 5px, 10px, rgba($color-bright-gray, .1));
 
             span {
                 font-weight: $font-bold;
                 font-size: $font-md;
             }
+
+            @include media-down($screen-sm-max) {
+                position: static;
+                padding-top: $space-base;
+                margin-bottom: $space-md;
+                text-align: center;
+                background-color: inherit;
+                box-shadow: none;
+            }
+        }
+
+        @include media-down($screen-sm-max) {
+            padding-top: $space-lg;
         }
     }
 }

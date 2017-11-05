@@ -1,107 +1,131 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{block.super}} | Home{% endblock %}
+{% block title %}{{ block.super }} | Home{% endblock %}
 
 {% block content %}
-<main class="home"> 
-    <!-- the entro section -->
-    <section class="intro">
-        <div data-aos="slide-up" data-aos-duration="700"></div>
-        <div data-aos="slide-up" data-aos-duration="1100"></div>
-        <div data-aos="slide-up" data-aos-duration="1600"></div>
-        <div data-aos="slide-up" data-aos-duration="1900"></div>
-    </section>
+    <main class="home">
+        <!-- the intro section -->
+        <section class="intro">
+            <div data-aos="slide-up" data-aos-duration="700"></div>
+            <div data-aos="slide-up" data-aos-duration="1100"></div>
+            <div data-aos="slide-up" data-aos-duration="1600"></div>
+            <div data-aos="slide-up" data-aos-duration="1900"></div>
+        </section>
 
-    <!-- the mattress section -->
-    <section class="mattress">
-        <div class="bg" data-aos="fade-up" data-aos-duration="3000"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="mattress-label col-sm-auto col-12 row align-items-center">
-                    <h2 class="col-8 text-center">مراتب <span class='font-weight-bold'>ماي بد</span> ستار</h2>
-                    <img class="img-fluid col-4" src="{% static 'images/svg/matt-icon.svg' %}" alt="">
-                </div>
-                <div class="col-12 row justify-content-center">
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="item mb-5">
-                            <span class="item-title">مرتبة</span>
-                            <h2 class="item-name">سيزر</h2>
-                            <a class="item-link" href="#">مشاهدة التفاصيل</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="item mb-5">
-                            <span class="item-title d-block">مرتبة</span>
-                            <h2 class="item-name">سيزر</h2>
-                            <a class="item-link" href="#">مشاهدة التفاصيل</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="item mb-5 new">
-                            <span class="item-new">جديد</span>
-                            <span class="item-title d-block">مرتبة</span>
-                            <h2 class="item-name">سيزر</h2>
-                            <a class="item-link" href="#">مشاهدة التفاصيل</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
-                    <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
-                    <a class="link" href="#">مشاهده جميع المراتب</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- the mattress section -->
+        <section class="mattress">
+            <div class="bg" data-aos="fade-up" data-aos-duration="3000"></div>
 
-    <section class="more-product">
-        <div class="container">
-            <div class="row justify-content-center">
-                <h2 class="section-title">المذيد من المنتجات</h2>
-                <div class="col-12">
-                    <div class="slider">
-                        <div id="moreProductSlid" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row justify-content-center align-items-center">
-                                        <div class="col-4"></div>
-                                        <div class="col-6 text-right">
-                                            <h4>ميلتون - واقي المرتبة</h4>
-                                            <p>بدأت ماي بد ستار للانتاج بحلم متطلعبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلبدأت ماي بد ستار للانتاج بحلم متطلععععع</p>
-                                        </div>
-                                    </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- the label header -->
+                    <div class="mattress-label col-sm-auto col-12 row align-items-center">
+                        <h2 class="col-8 text-center">مراتب <span class='font-weight-bold'>ماي بد</span> ستار</h2>
+                        <img class="img-fluid col-4" src="{% static 'images/svg/matt-icon.svg' %}" alt="">
+                    </div>
+
+                    <!-- the mattress items -->
+                    <div class="col-12 row flex-row-reverse justify-content-center">
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="item mb-5 new">
+                                <span class="item-new">جديد</span>
+                                <span class="item-title d-block">مرتبة</span>
+                                <h2 class="item-name">{{ bubbly.name }}</h2>
+                                <a class="item-link" href="{% url 'Public:mattress' pk=bubbly.pk %}">مشاهدة التفاصيل</a>
+                            </div>
+                        </div>
+                        {% for mattress in mattress_list %}
+                            <div class="col-md-4 col-sm-6 col-12">
+                                <div class="item mb-5">
+                                    <span class="item-title d-block">مرتبة</span>
+                                    <h2 class="item-name">{{ mattress.name }}</h2>
+                                    <a class="item-link" href="{% url 'Public:mattress' pk=mattress.pk %}">مشاهده
+                                        التفاصيل</a>
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#moreProductSlid" role="button" data-slide="prev">
-                                <span class="flaticon-left" aria-hidden="true"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#moreProductSlid" role="button" data-slide="next">
-                                <span class="flaticon-right" aria-hidden="true"></span>
-                            </a>
-                        </div> 
+                        {% endfor %}
+                    </div>
+
+                    <!-- the read more BTN -->
+                    <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
+                        <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
+                        <a class="link" href="{% url 'Public:mattress' pk=first_mattress_pk %}">مشاهده جميع المراتب</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="custom-mattress">
-        <div class="bg" data-aos="fade-up" data-aos-duration="3000"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8 custom-img">
-                    <img class="img-fluid" src="{% static 'images/custome.png' %}" alt="اصنع مرتبتك علي مزاجك">
-                </div>
-                <div class="col-8 custom-text">
-                    <p>مع <span>ماي بد ستار</span> ممكن تعمل <span>مرتبة علي مزاجك</span> بمقاسات وارتفاعات انت تحددها بنفسك</p>
-                </div>
-                <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
-                    <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
-                    <a class="link" href="{% url 'Public:contact' %}">كلمنا وصمم مرتبتك</a>
+
+        <!-- our other products -->
+        <section class="more-product">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h2 class="section-title">المز يد من المنتجات</h2>
+                    <div class="col-12">
+
+                        <!-- the slider -->
+                        <div class="slider">
+                            <div id="moreProductSlid" class="carousel slide" data-ride="carousel">
+
+                                <!-- slider items -->
+                                <div class="carousel-inner">
+                                    {% for product in product_list %}
+                                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-10 col-md-4">
+                                                    <img class="img-fluid"
+                                                         src="{% get_media_prefix %}{{ product.cover }}"
+                                                         alt="{{ product.name }}">
+                                                </div>
+                                                <div class="col-10 col-md-6 text-right">
+                                                    <h4>
+                                                        <a href="{% url 'Public:product' pk=product.pk %}">{{ product.name }}</a>
+                                                    </h4>
+                                                    <p class="d-none d-md-block">{{ product.description|truncatewords:20 }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- slider cantrell -->
+                                <a class="carousel-control-prev" href="#moreProductSlid" role="button"
+                                   data-slide="prev">
+                                    <span class="flaticon-left" aria-hidden="true"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#moreProductSlid" role="button"
+                                   data-slide="next">
+                                    <span class="flaticon-right" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+
+        <!-- Custom Mattress -->
+        <section class="custom-mattress">
+            <div class="bg" data-aos="fade-up" data-aos-duration="3000"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-8 custom-img d-none d-md-block">
+                        <img class="img-fluid" src="{% static 'images/custome.png' %}" alt="اصنع مرتبتك علي مزاجك">
+                    </div>
+                    <div class="col-md-8 col-12 custom-text">
+                        <img class="img-fluid d-md-none d-block mb-5" src="{% static 'images/custome.png' %}"
+                             alt="اصنع مرتبتك علي مزاجك">
+                        <p>مع <span>ماي بد ستار</span> ممكن تعمل <span>مرتبة علي مزاجك</span> بمقاسات وارتفاعات انت
+                            تحددها بنفسك</p>
+                    </div>
+                    <div class="col-12 col-sm-10  col-md-7 col-lg-6 read-more">
+                        <img class="img-fluid" src="{% static 'images/svg/button.svg' %}" alt="">
+                        <a class="link" href="{% url 'Public:contact' %}">كلمنا وصمم مرتبتك</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}
 
