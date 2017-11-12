@@ -4,11 +4,11 @@
     <div class="row align-items-center h-100">
 
         <!-- English logo -->
-        <img class="col-md-auto col-sm-5 d-none d-sm-block mr-auto" src="{% static 'images/svg/logo-en.svg' %}" alt="My Bed Star">
+        <img class="col-lg-auto d-none d-lg-block mr-auto e-logo" src="{% static 'images/svg/logo-en.svg' %}" alt="My Bed Star">
 
         <!-- seals phone -->
-        <div class="col-auto d-none d-lg-block head-contact">
-            <span class="d-none d-xl-inline mr-2">تواصل معنا</span>
+        <div class="col-sm-auto col-12 mr-lg-0 mr-auto pt-2 pb-2 pt-0 pb-0 text-center head-contact">
+            <span class="d-xl-inline d-sm-none d-inline mr-2">تواصل معنا</span>
             <a class="mr-2 flaticon-phone" href="tel:{{ header_phone }}">{{ header_phone }}</a>
         </div>
 
@@ -22,7 +22,7 @@
                     <img class="open active" src="{% static 'images/svg/menu.svg' %}" alt="Open Menu">
                 </button>
                 <a href="{% url 'Public:home' %}">
-                    <img class="img-fluid pl-3 pl-sm-0" src="{% static 'images/logo-ar.png' %}" alt="My Bed Star">
+                    <img class="img-fluid pl-3 pl-sm-0 ar-logo" src="{% static 'images/logo-ar.png' %}" alt="My Bed Star">
                 </a>
             </div>
 

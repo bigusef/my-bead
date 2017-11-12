@@ -36,19 +36,18 @@
 
     .menu-list {
         background-color: $color-gallery;
-        @include position(realtive);
+        @include position(relative);
 
         &:before {
             content: '';
             width: 500%;
             background-color: $color-gallery;
-            @include position(absolute, top 0 bottom 0 left 0);
+            @include position(absolute, top 0 right 0 bottom 0 left 100%);
         }
 
         .link-list {
             padding-top: $space-lg;
-            margin: 0;
-            @include position(absolute, top 0 right 0 bottom 0 left 0);
+            margin: 0 0 0 -15px;
 
             .link-item {
                 display: inline-block;
@@ -60,13 +59,41 @@
                 white-space: nowrap;
                 @include transition(all .3s ease-in-out);
 
-                &:hover, &.active {
+                @include media-xs {
+                    padding: $space-sm $space-md;
+                    border-radius: $space-md;
+                    margin: auto $space-sm;
+                }
+
+                &:hover, &.active {;
                     padding-right: $space-lg;
                     padding-left: $space-lg;
                     border-top-left-radius: $space-md;
                     border-bottom-left-radius: $space-md;
                     transform: translateX(-30%);
+
+                    @include media-up($screen-sm-min) {
+                        color: $color-white !important;
+                    }
+
+                    @include media-xs {
+                        padding-right: $space-md;
+                        padding-left: $space-md;
+                        transform: translateX(0);
+                        background-color: transparent !important;
+                        border: 1px solid;
+                    }
                 }
+            }
+
+            @include media-xs {
+                display: flex;
+                flex-direction: row-reverse;
+                width: 100%;
+                padding-top: $space-md;
+                padding-bottom: $space-md;
+                margin-left: 0;
+                overflow-x: auto;
             }
         }
     }

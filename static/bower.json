@@ -13,5 +13,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "aos": "^2.2.0",
+    "bootstrap": "4.0.0-beta"
+  }
 }

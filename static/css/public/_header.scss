@@ -1,12 +1,25 @@
 header {
-    height: 60px;
+    height: 50px;
     background-color: $color-swamp;
+
+    @include media-xs {
+        height: auto;
+    }
+
+    .e-logo {
+        height: 25px;
+    }
+
+    .ar-logo {
+        height: 43px;
+    }
+
     .head-contact {
         span, a {
             padding: $space-xs $space-base;
-            border: 2px solid $color-pacific-blue;
+            border: 1px solid $color-pacific-blue;
             color: $color-white;
-            border-radius: $space-xs;
+            border-radius: $space-sm;
             font-weight: $font-light;
             font-size: $font-md;
         }
@@ -17,7 +30,13 @@ header {
                 vertical-align: middle;
             }
         }
+        span {
+            @include media-down(330px){
+                display: none !important;
+            }
+        }
     }
+
     .main-menu {
         min-height: 100%;
         padding-top: $space-xs;
