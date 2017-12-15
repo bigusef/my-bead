@@ -12,11 +12,10 @@ class HomeView(TemplateView):
 
         try:
             context['bubbly'] = Mattress.objects.get(name='بابلي')
+            context['mattress_list'] = Mattress.objects.filter(is_new__exact=True)[:2]
+            context['product_list'] = Products.objects.filter(is_new__exact=True)
         except Mattress.DoesNotExist:
             pass
-
-        context['mattress_list'] = Mattress.objects.filter(is_new__exact=True)[:2]
-        context['product_list'] = Products.objects.filter(is_new__exact=True)
         return context
 
 

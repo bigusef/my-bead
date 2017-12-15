@@ -25,7 +25,7 @@ SECRET_KEY = 'w-@^ngh7q5de#++rhtdp=b+3-prwg^bb)+ktz%(o+zf68b5a9g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.2']
+ALLOWED_HOSTS = ['127.0.0.1', ]
 
 
 # Application definition
@@ -84,8 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mybed',
-        'USER': 'mybed_user',
-        'PASSWORD': '12345tgb',
+        'USER': 'mybed-user',
+        'PASSWORD': 'K1bvtaGCnlh9x1c7',
         'HOST': 'localhost',
         'PORT': '',
     }

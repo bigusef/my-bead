@@ -31,7 +31,13 @@ def header_context(request):
 # het to get data for FOOTer to all Views
 def footer_context(request):
     info = CompanyInfo.objects.first()
-    return {
-        'facebook_link': info.facebook,
-        'instagram_link': info.instagram,
-    }
+    if info:
+        return {
+            'facebook_link': info.facebook,
+            'instagram_link': info.instagram,
+        }
+    else:
+        return {
+            'facebook_link': '',
+            'instagram_link': '',
+        }
