@@ -187,7 +187,10 @@ local_settings.py
 db.sqlite3
 media
 staticfiles/
+<<<<<<< HEAD
 static-files/
+=======
+>>>>>>> ca5bd1ce0b73a0b08ab210d2d1bb8c8fd9f40136
 
 ### Flask stuff ###
 instance/
