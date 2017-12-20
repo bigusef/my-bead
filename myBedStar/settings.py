@@ -25,7 +25,7 @@ SECRET_KEY = 'w-@^ngh7q5de#++rhtdp=b+3-prwg^bb)+ktz%(o+zf68b5a9g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ]
+ALLOWED_HOSTS = ['mahmudyusuf.pythonanywhere.com', ]
 
 
 # Application definition
@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'myBedStar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mybed',
-        'USER': 'mybed-user',
+        'NAME': 'mahmudyusuf$mybed',
+        'USER': 'mahmudyusuf',
         'PASSWORD': 'K1bvtaGCnlh9x1c7',
-        'HOST': 'localhost',
+        'HOST': 'mahmudyusuf.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
 }
@@ -128,6 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static-files")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 MEDIA_URL = '/media/'
