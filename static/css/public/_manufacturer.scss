@@ -1,0 +1,43 @@
+@import "../sass/utilities/main";
+
+main.manufacturer {
+  background-color: #FAFAFA;
+  padding-top: $space-xl;
+  padding-bottom: $space-md;
+
+  .title-preve {
+    margin: 0;
+    padding-top: $space-lg;
+    padding-bottom: $space-md;
+    color: #020202;
+    font-size: 18px;
+  }
+
+  ul {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+
+  }
+  li.item {
+    display: block;
+    padding: $space-md $space-base;
+    text-align: right;
+    background-color: $color-white;
+    border-radius: $space-sm;
+
+    &:not(:last-child) {
+      margin-bottom: $space-sm;
+    }
+  }
+
+
+  .link {
+    display: inline-block;
+    margin-top: $space-md;
+    padding: $space-sm $space-md;
+    color: $color-white;
+    background-color: $color-pacific-blue;
+    border-radius: $space-md;
+  }
+}
