@@ -15,7 +15,7 @@ header {
     }
 
     .head-contact {
-        span, a {
+        .btn-contact-link, .btn-contact-tel {
             padding: $space-xs $space-base;
             border: 1px solid $color-pacific-blue;
             color: $color-white;
@@ -23,14 +23,14 @@ header {
             font-weight: $font-light;
             font-size: $font-md;
         }
-        a {
+        .btn-contact-tel {
             &:before {
                 margin: 0;
                 padding-right: $space-base;
                 vertical-align: middle;
             }
         }
-        span {
+        .btn-contact-link {
             @include media-down(330px){
                 display: none !important;
             }

@@ -8,8 +8,8 @@
 
         <!-- seals phone -->
         <div class="col-sm-auto col-12 mr-lg-0 mr-auto pt-2 pb-2 pt-0 pb-0 text-center head-contact">
-            <span class="d-xl-inline d-sm-none d-inline mr-2">تواصل معنا</span>
-            <a class="mr-2 flaticon-phone" href="tel:{{ header_phone }}">{{ header_phone }}</a>
+            <a class="d-xl-inline d-sm-none d-inline mr-2 btn-contact-link" href="{% url 'Public:contact' %}">تواصل معنا</a>
+            <a class="mr-2 flaticon-phone btn-contact-tel" href="tel:{{ header_phone }}">{{ header_phone }}</a>
         </div>
 
         <!-- Main menu -->
