@@ -112,3 +112,6 @@ class Manufacturer(models.Model):
     class Meta:
         verbose_name = 'منتج مستلزمات تصنيع'
         verbose_name_plural = 'مستلزمات التصنيع'
+
+    def __str__(self):
+        return self.text
