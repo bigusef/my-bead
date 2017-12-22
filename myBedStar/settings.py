@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'myBedStar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mybed',
-        'USER': 'mybed-user',
+        'NAME': 'mahmudyusuf$mybed',
+        'USER': 'mahmudyusuf',
         'PASSWORD': 'K1bvtaGCnlh9x1c7',
-        'HOST': 'localhost',
+        'HOST': 'mahmudyusuf.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
 }
