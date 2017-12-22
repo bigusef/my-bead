@@ -1,0 +1,32 @@
+@import "../sass/utilities/main";
+
+main.manufacturer {
+  background-color: #FAFAFA;
+  padding-top: $space-xl;
+  padding-bottom: $space-md;
+
+  .title-preve {
+    margin-top: $space-base;
+    color: #020202;
+    font-size: 16px;
+  }
+
+  ul {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+
+  }
+  li.item {
+    display: block;
+    padding: $space-md $space-base;
+    text-align: right;
+    background-color: $color-white;
+    border-radius: $space-sm;
+
+    &:not(:last-child) {
+      margin-bottom: $space-sm;
+    }
+  }
+
+}

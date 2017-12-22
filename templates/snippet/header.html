@@ -36,8 +36,8 @@
                         <li {% if url_name == 'product' %}class="active"{% endif %}>
                             <a href="{% url 'Public:product' pk=first_product_pk %}">المزيد من منتجاتنا</a>
                         </li>
-                        <li>
-                            <a href="#">مستلزمات التصنيع</a>
+                        <li {% if url_name == 'manufacturer' %}class="active"{% endif %}>
+                            <a href="{% url 'Public:manufacturer' %}">مستلزمات التصنيع</a>
                         </li>
                         <li {% if url_name == 'about' %}class="active"{% endif %}>
                             <a href="{% url 'Public:about' %}">عن الشركه</a>

@@ -104,3 +104,11 @@ class Products(models.Model):
             if len(i) <= 2:
                 self.result.remove(i)
         return self.result
+
+
+class Manufacturer(models.Model):
+    text = models.CharField(max_length=200, unique=True, verbose_name='أسم المنتج')
+
+    class Meta:
+        verbose_name = 'منتج مستلزمات تصنيع'
+        verbose_name_plural = 'مستلزمات التصنيع'

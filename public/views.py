@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView, DetailView
 
 from django.shortcuts import get_object_or_404
-from .models import CompanyInfo, Mattress, Products
+from .models import CompanyInfo, Mattress, Products, Manufacturer
 
 
 class HomeView(TemplateView):
@@ -37,6 +37,15 @@ class ProductView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ProductView, self).get_context_data(**kwargs)
         context['object_list'] = Products.objects.all()
+        return context
+
+
+class ManufacturerView(TemplateView):
+    template_name = 'manufacturer.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ManufacturerView, self).get_context_data(**kwargs)
+        context['list'] = Manufacturer.objects.all()
         return context
 
 

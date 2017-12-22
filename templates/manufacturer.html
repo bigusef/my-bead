@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ block.super }} | مستلزامات التصنيع{% endblock %}
+
+{% block content %}
+    <main class="manufacturer">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-8 col-md-10 col-12 ml-auto mr-auto">
+                <h1 class="text-center mb-5 section-title">مستلزمات التصنيع</h1>
+                <img class="img-fluid" src="{% static 'images/factory.jpg' %}" alt="مستلزمات التصنيع">
+                <p class="text-right title-preve">ماي بد بتوفر جميع مستلزمات تصنيع المراتب بأفضل الأسعار وأجود الخامات</p>
+                <ul class="list-unstyled">
+                    {% for item in list %}
+                        <li class="item">{{ item.text }}</li>
+                    {% endfor %}
+                </ul>
+                <div class="text-center">
+                    <p class="mt-5">الطلبيات متوفرة بأي حجم سواء كبيرة او صغيرة</p>
+                    <a href="{% url 'Public:contact' %}" title="أتصل بنا الأن">أتصل بنا الأن</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+{% endblock %}
