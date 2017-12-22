@@ -6,9 +6,11 @@ main.manufacturer {
   padding-bottom: $space-md;
 
   .title-preve {
-    margin-top: $space-base;
+    margin: 0;
+    padding-top: $space-lg;
+    padding-bottom: $space-md;
     color: #020202;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   ul {
@@ -29,4 +31,13 @@ main.manufacturer {
     }
   }
 
+
+  .link {
+    display: inline-block;
+    margin-top: $space-md;
+    padding: $space-sm $space-md;
+    color: $color-white;
+    background-color: $color-pacific-blue;
+    border-radius: $space-md;
+  }
 }
