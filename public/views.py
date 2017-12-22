@@ -72,3 +72,5 @@ class AboutUsView(TemplateView):
             context['word'] = info.about_word
         return context
 
+
+
