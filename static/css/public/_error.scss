@@ -1,0 +1,27 @@
+@import "../sass/utilities/main";
+
+main.error-page {
+  background-color: #FAFAFA;
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+
+  i:before {
+    font-size: 100pt;
+    color: #bd2130;
+    margin: 0;
+  }
+
+  h1 {
+    color: #2e3133;
+    font-size: 45px;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: $space-md;
+    padding: $space-sm $space-md;
+    color: $color-white;
+    background-color: $color-pacific-blue;
+    border-radius: $space-md;
+  }
+}

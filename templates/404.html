@@ -2,5 +2,11 @@
 {% load static %}
 
 {% block content %}
-<h1>Can't found this page</h1>
+    <main class="error-page">
+        <div class="container text-center">
+            <i class="flaticon-error"></i>
+            <h1>رابط خطأ أو غير صالح</h1>
+            <a href="{% url 'Public:home' %}">العوده الي الصفحه الرئيسيه</a>
+        </div>
+    </main>
 {% endblock %}
