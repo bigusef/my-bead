@@ -7,8 +7,8 @@
     <main class="product-item">
         <div class="container">
             <div class="row">
-                <div class="col-sm-10 col-12 order-sm-1 order-2">
-                    <div class="col-sm-11 col-12 pl-0 pr-0 mattress-content">
+                <div class="col-md-10 col-12 order-md-1 order-2">
+                    <div class="col-md-11 col-12 pl-0 pr-0 mattress-content">
                         <img class="img-fluid mb-5" src="{% get_media_prefix %}{{ object.cover }}"
                              alt="{{ object.name }}">
                         <p class="text-right">{{ object.description }}</p>
@@ -20,10 +20,10 @@
                     </div>
                 </div>
 
-                <div class="col-sm-2 col-xs-12 order-sm-2 order-1 menu-list">
+                <div class="col-md-2 col-12 order-md-2 order-1 menu-list">
                     <ul class="link-list list-unstyled">
                         {% for item in object_list %}
-                            <li class="mb-sm-3 mb-0">
+                            <li class="mb-md-3 mb-0">
                                 <a {% if item.pk == object.pk %}
                                     class="link-item active"
                                     style="background-color: {{ item.color }}; border-color: {{ item.color }}; color: {{ item.color }};"
